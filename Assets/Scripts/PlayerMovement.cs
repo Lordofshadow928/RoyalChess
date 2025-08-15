@@ -7,19 +7,22 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5.0f;
     public float steerSpeed = 180.0f;
     public float bodySpeed = 5.0f;
-    public int gap = 50;
+    [SerializeField]private int gap = 5;
 
     private Rigidbody rb;
     private BoxCollider boxCollider;
+    private MeshCollider meshCollider;
     private float horizontalInput;
     public GameObject bodyPrefab;
+    public GameObject tailPrefab;
 
     private List<GameObject> bodyParts = new List<GameObject>();
     private List<Vector3> positionHistory = new List<Vector3>();
     public void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        boxCollider = GetComponent<BoxCollider>();
+        rb = this.GetComponent<Rigidbody>();
+        boxCollider = this.GetComponent<BoxCollider>();
+        meshCollider = this.GetComponent<MeshCollider>();
     }
 
     public void Start()
@@ -29,14 +32,10 @@ public class PlayerMovement : MonoBehaviour
             growSnake();
             growSnake();
             growSnake();
+            tailMove();
     }
-    public void Update()
+    public void FixedUpdate()
     {
-        //Flip();
-        //float moveHorizontal = Input.GetAxis("Horizontal");
-        //float moveVertical = Input.GetAxis("Vertical");
-        //Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        //float movevertical = input.getaxis("vertical");
         transform.position +=transform.forward * moveSpeed * Time.deltaTime;
         float steerDirection = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up * steerDirection * steerSpeed * Time.deltaTime);
@@ -52,6 +51,15 @@ public class PlayerMovement : MonoBehaviour
             body.transform.LookAt(point);
             index++;
         }
+
+        foreach (var tail in bodyParts)
+        {
+            Vector3 point = positionHistory[Mathf.Min(index * gap, positionHistory.Count - 1)];
+            Vector3 moveDirection = point - tail.transform.position;
+            tail.transform.position += moveDirection * bodySpeed * Time.deltaTime;
+            tail.transform.LookAt(point);
+            index++;
+        }
     }
 
     private void growSnake()
@@ -60,5 +68,10 @@ public class PlayerMovement : MonoBehaviour
         bodyParts.Add(body);
 
     }
+    private void tailMove()
+    {
+        GameObject tail = Instantiate(tailPrefab);
+        bodyParts.Add(tail);
 
+    }
 }
