@@ -27,9 +27,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void Start()
     {
-        // Initialize the snake with a few body parts
-            growSnake();
-            tailMove();
+        growSnake();
+        growSnake();
+        growSnake();
+        growSnake();
+        tailMove();
     }
     public void FixedUpdate()
     {
