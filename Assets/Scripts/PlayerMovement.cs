@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5.0f;
     public float steerSpeed = 180.0f;
     public float bodySpeed = 5.0f;
-    [SerializeField]private int gap = 5;
+    [SerializeField]private int gap = 9;
 
     private Rigidbody rb;
     private BoxCollider boxCollider;
@@ -28,9 +28,6 @@ public class PlayerMovement : MonoBehaviour
     public void Start()
     {
         // Initialize the snake with a few body parts
-            growSnake();
-            growSnake();
-            growSnake();
             growSnake();
             tailMove();
     }
