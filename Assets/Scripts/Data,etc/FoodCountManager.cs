@@ -78,7 +78,7 @@ public class FoodCountManager : MonoBehaviour
     {
         int nextStage = HighestUnlockedStage + 1;
 
-        FoodCountData stageData = LevelManager.Instance.GetStageData(nextStage);
+        FoodsTypeData stageData = LevelManager.Instance.GetStageData(nextStage);
 
         if (stageData == null)
             return;
@@ -105,7 +105,7 @@ public class FoodCountManager : MonoBehaviour
 
     public int GetNextStageRequirement()
     {
-        FoodCountData stageData = LevelManager.Instance.GetStageData(HighestUnlockedStage + 1);
+        FoodsTypeData stageData = LevelManager.Instance.GetStageData(HighestUnlockedStage + 1);
 
         if (stageData == null)
             return 0;

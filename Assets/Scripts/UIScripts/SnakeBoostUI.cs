@@ -10,7 +10,7 @@ public class SnakeBoostUI : MonoBehaviour
     private void Awake()
     {
         if (boostImage == null)
-            boostImage = UIManager.Instance.LightningBoostImage;
+            boostImage = BoostLightningImage.Instance.LightningBoostImage;
     }
     private void Start()
     {

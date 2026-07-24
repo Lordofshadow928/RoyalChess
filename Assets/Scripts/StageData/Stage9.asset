@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb77346afac1c4c4b844defa76a6b00f, type: 3}
-  m_Name: Stage16
+  m_Name: Stage9
   m_EditorClassIdentifier: 
-  stageIndex: 16
-  requiredFruit: 3400
-  fruitType: 15
-  fruitSprite: {fileID: 21300000, guid: c8cc20e2842adf6488ee9e66a0b928f5, type: 2}
+  stageIndex: 9
+  requiredFruit: 1300
+  fruitType: 6
+  fruitSprite: {fileID: 21300000, guid: 57bee6eb7937e4b45bce379530824f93, type: 2}

@@ -11,7 +11,7 @@ public class RequirementUI : MonoBehaviour
 
     public void Show(MenuIsland island)
     {
-        FoodCountData data = island.StageData;
+        FoodsTypeData data = island.StageData;
 
         stageImage.sprite = data.fruitSprite;
 

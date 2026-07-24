@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance;
 
     [SerializeField] private LevelData[] levelDatas;
-    [SerializeField] private FoodCountData[] stageDatas;
+    [SerializeField] private FoodsTypeData[] stageDatas;
 
     [SerializeField] private Transform mapRoot;
 
@@ -56,7 +56,7 @@ public class LevelManager : MonoBehaviour
         return levelDatas[stageIndex - 1];
     }
 
-    public FoodCountData GetStageData(int stageIndex)
+    public FoodsTypeData GetStageData(int stageIndex)
     {
         if (stageIndex < 1 || stageIndex > stageDatas.Length)
             return null;

@@ -16,10 +16,6 @@ public class ShopSelectionManager : MonoBehaviour
     }
     public void Select(SkinButton selected)
     {
-        Debug.Log($"selected = {selected}");
-        Debug.Log($"snakePreview = {snakePreview}");
-        Debug.Log($"shopEquipController = {shopEquipController}");
-        Debug.Log($"SkinData = {selected.SkinData}");
         foreach (var button in skinButtons)
             button.SetSelected(false);
 

@@ -3,12 +3,12 @@ using UnityEngine;
 public class MenuIsland : MonoBehaviour
 {
     [Header("Stage Data")]
-    [SerializeField] private FoodCountData stageData;
+    [SerializeField] private FoodsTypeData stageData;
 
     [Header("Settings")]
     [SerializeField] private bool useAutomaticLock = true;
 
-    public FoodCountData StageData => stageData;
+    public FoodsTypeData StageData => stageData;
 
     public Transform PositionForSnake { get; private set; }
     public GameObject LockController { get; private set; }
