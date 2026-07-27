@@ -1,4 +1,3 @@
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -13,7 +12,7 @@ public class LevelManager : MonoBehaviour
     private GameObject currentMap;
 
     private int currentStageIndex = 1;
-
+    public int CurrentStageIndex => currentStageIndex;
     public LevelData CurrentLevelData => GetLevelData(currentStageIndex);
 
     public MapData CurrentMapData { get; private set; }

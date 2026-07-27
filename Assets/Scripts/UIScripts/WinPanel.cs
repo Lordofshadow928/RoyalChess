@@ -9,6 +9,10 @@ public class WinPanel : ResultHandler
     public override void HandleResult()
     {
         Time.timeScale = 0f;
+        int food = resultFoodUI.Storage.StoredFood;
+        int coins = CoinConverter.ConvertFoodToCoins(food);
+
+        CoinManager.Instance.SetPendingReward(coins, LevelManager.Instance.CurrentStageIndex);
         resultFoodUI.ShowWin();
         panel.SetActive(true);
     }

@@ -4,6 +4,8 @@ using UnityEngine;
 public class SnakeGrowth : MonoBehaviour
 {
     [SerializeField] private int foodsPerGrowth = 4;
+    [SerializeField] private bool isPlayer;
+
     private int foodCounter;
     private SnakeFoodStorage foodStorage;
     private SnakeBody body;
@@ -32,7 +34,11 @@ public class SnakeGrowth : MonoBehaviour
         foodCounter++;
         foodStorage?.AddFood(1);
         energy?.AddEnergy(1);
-        FoodCountManager.Instance?.AddFruit(fruitType, 1);
+
+        if (isPlayer)
+        {
+            FoodCountManager.Instance?.AddFruit(fruitType, 1);
+        }
         if (foodCounter >= foodsPerGrowth)
         {
             foodCounter = 0;

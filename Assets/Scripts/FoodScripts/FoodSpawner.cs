@@ -163,21 +163,5 @@ public class FoodSpawner : MonoBehaviour
 
         return closest != null ? closest.transform : null;
     }
-
-    //private void OnDrawGizmos()
-    //{
-    //    if (spawnPoints == null) return;
-
-    //    foreach (Transform point in spawnPoints)
-    //    {
-    //        if (point == null) continue;
-
-    //        Gizmos.color = Color.yellow;
-    //        Gizmos.DrawSphere(point.position, 0.5f);
-
-    //        Gizmos.color = Color.green;
-    //        Gizmos.DrawWireCube(point.position, new Vector3(spawnArea.x * 2, 0.1f, spawnArea.z * 2));
-    //    }
-    //}
 }
 
