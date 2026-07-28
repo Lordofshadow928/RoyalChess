@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3296843124205170776}
   - component: {fileID: 5912464936778388974}
   - component: {fileID: 4684029688659522856}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SkinAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5613969846246534047}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4107406180530893214}
   - component: {fileID: 2947955942688390126}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5611793181453183598}
   - component: {fileID: 8161713464598103326}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MouthPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1762451670320994664}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HeadPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 8459824426438001995}
   - component: {fileID: 7799254742555378774}
   - component: {fileID: 8487098180148445691}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CrownHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3985863898555342876}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 2709628935851715748}
   - component: {fileID: 8383807461826218673}
   - component: {fileID: 8715879324926378342}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SnakeAI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,6 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodsPerGrowth: 4
+  isPlayer: 0
 --- !u!114 &7133297430260850361
 MonoBehaviour:
   m_ObjectHideFlags: 0

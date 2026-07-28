@@ -26,6 +26,7 @@ public class LevelData : ScriptableObject
     public int aiCount = 7;
     public float aiSpawnInterval = 0.5f;
     public float aiRespawnDelay = 3f;
+    public float safeSpawnRadius = 3f;
 
     [Header("Powerup Spawn")]
     public float powerupSpawnInterval = 15f;

@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - Obstacle
   - RainbowBall Boost
+  - Coins Boost
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Obstacle
   - Snake
   - SnakePreview
-  - 
+  - AI Snake
   - 
   - 
   - 

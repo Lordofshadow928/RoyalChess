@@ -21,7 +21,8 @@ public class CoinManager : MonoBehaviour
     private const string CoinsKey = "Coins";
     private const string PendingCoinsKey = "PendingCoins";
     private const string PendingStageKey = "PendingStage";
-
+    private const string FirstLaunchKey = "CoinSystemInitialized";
+    private const int StartingCoins = 0;
     public event Action<int> OnCoinsChanged;
 
     public int Coins => PlayerPrefs.GetInt(CoinsKey, 0);
@@ -32,6 +33,7 @@ public class CoinManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            InitializeSave();
         }
         else
         {
@@ -39,6 +41,16 @@ public class CoinManager : MonoBehaviour
         }
     }
 
+    private void InitializeSave()
+    {
+        if (PlayerPrefs.HasKey(FirstLaunchKey))
+            return;
+
+        PlayerPrefs.SetInt(CoinsKey, StartingCoins);
+
+        PlayerPrefs.SetInt(FirstLaunchKey, 1);
+        PlayerPrefs.Save();
+    }
     #region Coins
 
     public bool CanAfford(int amount)

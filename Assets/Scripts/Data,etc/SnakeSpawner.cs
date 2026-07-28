@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SnakeSpawner : MonoBehaviour
@@ -8,6 +9,7 @@ public class SnakeSpawner : MonoBehaviour
     [SerializeField] private DeathResultObserver deathObserver;
     [SerializeField] private ResultFoodUI resultFoodUI;
     [SerializeField] private SnakeProgressUI progressUI;
+    [SerializeField] private LayerMask spawnBlockingLayer;
     private Transform player;
     private LevelData level;
     private MapData map;
@@ -42,12 +44,47 @@ public class SnakeSpawner : MonoBehaviour
         resultFoodUI.Initialize(player.GetComponent<SnakeFoodStorage>());
         progressUI.Initialize(player.GetComponent<SnakeEnergy>());
     }
+    Transform GetSafeBotSpawn()
+    {
+        Transform[] spawns = map.BotSpawnPoints;
 
+        if (spawns.Length == 0)
+            return null;
+
+        List<Transform> validSpawns = new List<Transform>();
+
+        foreach (Transform spawn in spawns)
+        {
+            bool occupied = Physics.CheckSphere(
+                spawn.position,
+                level.safeSpawnRadius,
+                spawnBlockingLayer);
+
+            if (!occupied)
+                validSpawns.Add(spawn);
+        }
+
+        if (validSpawns.Count > 0)
+        {
+            return validSpawns[Random.Range(0, validSpawns.Count)];
+        }
+
+        return null;
+    }
     public void SpawnAI()
     {
-        Transform spawn = map.GetRandomBotSpawn();
+        Transform spawn = GetSafeBotSpawn();
 
-        GameObject snake = Instantiate(level.aiSnakePrefab, spawn.position, spawn.rotation);
+        if (spawn == null)
+        {
+            StartCoroutine(RespawnRoutine());
+            return;
+        }
+
+        GameObject snake = Instantiate(
+            level.aiSnakePrefab,
+            spawn.position,
+            spawn.rotation);
 
         AISnakeRespawn respawn = snake.GetComponent<AISnakeRespawn>();
 
