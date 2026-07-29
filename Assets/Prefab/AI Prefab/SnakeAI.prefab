@@ -449,8 +449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abb59a46df821a4f983158f868a2fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  rotateSpeed: 240
+  moveSpeed: 2.5
+  rotateSpeed: 200
 --- !u!114 &8992971415625369584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,10 +544,10 @@ MonoBehaviour:
     m_Bits: 512
   wallSensorDistance: 4
   sideAngle: 45
-  snakeDetectionRadius: 1.5
-  reactionInterval: 0.3
+  snakeDetectionRadius: 1.2
+  reactionInterval: 0.5
   wallAvoidWeight: 2
-  snakeAvoidWeight: 0.75
+  snakeAvoidWeight: 0.5
   snakeViewDot: 0.5
 --- !u!114 &4835634253030118752
 MonoBehaviour:

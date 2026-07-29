@@ -126,11 +126,7 @@ public class CoinRewardAnimator : MonoBehaviour
 
             float u = 1f - t;
 
-            coin.position =
-                (u * u * start) +
-                (2f * u * t * control) +
-                (t * t * end);
-
+            coin.position = (u * u * start) + (2f * u * t * control) + (t * t * end);
             yield return null;
         }
 

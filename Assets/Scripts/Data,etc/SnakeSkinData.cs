@@ -26,4 +26,6 @@ public class SnakeSkinData
     public GameObject headPrefab;
     public GameObject bodyPrefab;
     public GameObject tailPrefab;
+    [Header("AI")]
+    public bool allowForAI = true;
 }

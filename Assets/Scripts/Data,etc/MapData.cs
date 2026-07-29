@@ -76,8 +76,12 @@ public class MapData : MonoBehaviour
             powerupSpawnPoints = new Transform[0];
             return;
         }
-
-        List<Transform> list = new List<Transform>();
+        if (root.childCount == 0)
+        {
+            powerupSpawnPoints = new Transform[] { root };
+            return;
+        }
+        List<Transform> list = new();
 
         foreach (Transform child in root)
             list.Add(child);
@@ -108,4 +112,35 @@ public class MapData : MonoBehaviour
 
         return powerupSpawnPoints[Random.Range(0, powerupSpawnPoints.Length)];
     }
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        foreach (Transform t in foodSpawnPoints)
+        {
+            if (t != null)
+                Gizmos.DrawSphere(t.position, 0.15f);
+        }
+
+        Gizmos.color = Color.blue;
+        foreach (Transform t in botSpawnPoints)
+        {
+            if (t != null)
+                Gizmos.DrawCube(t.position, Vector3.one * 0.3f);
+        }
+
+        Gizmos.color = Color.cyan;
+        foreach (Transform t in powerupSpawnPoints)
+        {
+            if (t != null)
+                Gizmos.DrawSphere(t.position, 0.25f);
+        }
+
+        if (playerSpawnPoint != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawCube(playerSpawnPoint.position, Vector3.one * 0.4f);
+        }
+    }
+#endif
 }

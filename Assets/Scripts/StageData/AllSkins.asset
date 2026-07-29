@@ -25,6 +25,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 939023624275728483, guid: 4a4d08079e4f30f469e2667c3c037a68,
       type: 3}
+    allowForAI: 1
   - skinID: creeper
     skinName: Creeper
     rarity: 3
@@ -37,6 +38,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 1624041272459690083, guid: f0b7f8b8d55b73d44a231594ef5f1bca,
       type: 3}
+    allowForAI: 1
   - skinID: croco
     skinName: Croco
     rarity: 0
@@ -49,6 +51,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 681286882343994087, guid: 18aae975920c4c44db8652e5d9e7167e,
       type: 3}
+    allowForAI: 1
   - skinID: dragon
     skinName: Dragon
     rarity: 1
@@ -61,6 +64,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 3466785471883915022, guid: 88c7f9d27f07dc84a8c94d553661c43b,
       type: 3}
+    allowForAI: 1
   - skinID: kong
     skinName: Kong
     rarity: 2
@@ -73,6 +77,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 7744837210989569715, guid: 7d44d31520aa6a94c970082caed3bd99,
       type: 3}
+    allowForAI: 1
   - skinID: korgi
     skinName: Korgi
     rarity: 1
@@ -85,6 +90,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 4385682892282533933, guid: 51a7de01d4daa704a98a95f76fb34cfb,
       type: 3}
+    allowForAI: 1
   - skinID: leopard
     skinName: Leopard
     rarity: 1
@@ -97,6 +103,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 8325633358799786083, guid: 16101c610424bb540a71332c4e28f2f9,
       type: 3}
+    allowForAI: 1
   - skinID: llama
     skinName: Llama
     rarity: 1
@@ -109,6 +116,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 201313210925835746, guid: aa53fab97c7904d49b76f355577927c3,
       type: 3}
+    allowForAI: 1
   - skinID: mechrabbit
     skinName: MechRabbit
     rarity: 2
@@ -121,6 +129,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 3166685071528182004, guid: 3446b3d2a1d45894595de4a151b87b9b,
       type: 3}
+    allowForAI: 1
   - skinID: panda
     skinName: Panda
     rarity: 0
@@ -133,6 +142,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 2412411797870214954, guid: 24564c0ba971ce64c8a85a76400929de,
       type: 3}
+    allowForAI: 1
   - skinID: parrot
     skinName: Parrot
     rarity: 2
@@ -145,6 +155,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 6405683808889703258, guid: cc5dd17c2c33ebe4596b8be33aaf9115,
       type: 3}
+    allowForAI: 1
   - skinID: pinkpanther
     skinName: PinkPanther
     rarity: 2
@@ -157,6 +168,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 3556188638543919707, guid: 1179a69cb8c93a4408ddd10eda20d0dd,
       type: 3}
+    allowForAI: 1
   - skinID: platypus
     skinName: Platypus
     rarity: 0
@@ -169,6 +181,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 5591226246769491377, guid: 6f474003a38d2594185bdcd079031290,
       type: 3}
+    allowForAI: 1
   - skinID: rhino
     skinName: Rhino
     rarity: 0
@@ -181,6 +194,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 7803756899290816203, guid: d70db0c8758b63842a67cbf9cd840a7b,
       type: 3}
+    allowForAI: 1
   - skinID: sphynx
     skinName: Sphynx
     rarity: 1
@@ -193,6 +207,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 6734197066290329942, guid: 206739c9306f216418b6d7caaa3f5570,
       type: 3}
+    allowForAI: 1
   - skinID: unicorn
     skinName: Unicorn
     rarity: 1
@@ -205,6 +220,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 8527578274393089652, guid: 99f2e45fd1961c445b0c4b7d6f31ed53,
       type: 3}
+    allowForAI: 1
   - skinID: yeti
     skinName: Yeti
     rarity: 2
@@ -217,6 +233,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 6216055132102803161, guid: a0bc2f5f0130b2042a0486d9ec971d2b,
       type: 3}
+    allowForAI: 1
   - skinID: zebra
     skinName: Zebra
     rarity: 0
@@ -229,6 +246,7 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 9144793833417327835, guid: 418797e70d1eab94fa1ac56070dcd527,
       type: 3}
+    allowForAI: 1
   - skinID: snake
     skinName: Snake
     rarity: 0
@@ -241,3 +259,4 @@ MonoBehaviour:
       type: 3}
     tailPrefab: {fileID: 6018291062412466636, guid: 8ad8fcc7e8170e2448685ad811c9e477,
       type: 3}
+    allowForAI: 0

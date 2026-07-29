@@ -5,6 +5,7 @@ using UnityEngine;
 public class SnakeSpawner : MonoBehaviour
 {
     [SerializeField] private FoodSpawner foodSpawner;
+    [SerializeField] private PowerupSpawner powerupSpawner;
     [SerializeField] private CameraFollow cameraFollow;
     [SerializeField] private DeathResultObserver deathObserver;
     [SerializeField] private ResultFoodUI resultFoodUI;
@@ -39,6 +40,7 @@ public class SnakeSpawner : MonoBehaviour
     {
         player =Instantiate(level.playerPrefab, map.PlayerSpawnPoint.position, map.PlayerSpawnPoint.rotation).transform;
         foodSpawner.Initialize(level, map, player);
+        powerupSpawner.Initialize(level, map);
         cameraFollow.Initialize(player);
         deathObserver.Initialize(player.GetComponent<SnakeHealth>());
         resultFoodUI.Initialize(player.GetComponent<SnakeFoodStorage>());

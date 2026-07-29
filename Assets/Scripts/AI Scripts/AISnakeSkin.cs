@@ -10,9 +10,10 @@ public class AISnakeSkin : MonoBehaviour
     {
         SnakeSkinController controller = GetComponent<SnakeSkinController>();
 
-        int randomIndex = Random.Range(0, database.Count);
+        SnakeSkinData selectedSkin = database.GetRandomAISkin();
 
-        SnakeSkinData selectedSkin = database.GetSkin(randomIndex);
+        if (selectedSkin == null)
+            return;
 
         controller.ApplySkin(selectedSkin);
 

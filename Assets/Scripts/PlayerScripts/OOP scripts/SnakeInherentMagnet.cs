@@ -51,7 +51,7 @@ public class SnakeInherentMagnet : MonoBehaviour
 
         if (cols.Length == 0)
         {
-            //Debug.Log("Magnet detected 0 colliders. mouthPoint pos: " + mouthPoint.position);
+            
         }
 
         foreach (var col in cols)

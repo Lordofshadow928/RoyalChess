@@ -1,7 +1,7 @@
 using UnityEngine;
 public class SnakeInvincible2 : MonoBehaviour
 {
-    [SerializeField] private Collider snakeHeadCollider;
+    //[SerializeField] private Collider snakeHeadCollider;
 
     public bool IsInvincible { get; private set; }
 
@@ -11,11 +11,11 @@ public class SnakeInvincible2 : MonoBehaviour
 
         IsInvincible = true;
 
-        if (snakeHeadCollider != null)
-        {
-            snakeHeadCollider.isTrigger = true;
-            Debug.Log("HEAD COLLIDER = TRIGGER");
-        }
+        //if (snakeHeadCollider != null)
+        //{
+        //    snakeHeadCollider.isTrigger = true;
+        //    Debug.Log("HEAD COLLIDER = TRIGGER");
+        //}
     }
 
     public void DisableInvincible()
@@ -24,11 +24,11 @@ public class SnakeInvincible2 : MonoBehaviour
 
         IsInvincible = false;
 
-        if (snakeHeadCollider != null)
-        {
-            snakeHeadCollider.isTrigger = false;
-            Debug.Log("HEAD COLLIDER = SOLID");
-        }
+        //if (snakeHeadCollider != null)
+        //{
+        //    snakeHeadCollider.isTrigger = false;
+        //    Debug.Log("HEAD COLLIDER = SOLID");
+        //}
     }
 }
 

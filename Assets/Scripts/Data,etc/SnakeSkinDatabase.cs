@@ -24,4 +24,35 @@ public class SnakeSkinDatabase : ScriptableObject
 
         return null;
     }
+    public SnakeSkinData GetRandomAISkin()
+    {
+        if (skins == null || skins.Length == 0)
+            return null;
+
+        int validCount = 0;
+
+        foreach (SnakeSkinData skin in skins)
+        {
+            if (skin.allowForAI)
+                validCount++;
+        }
+
+        if (validCount == 0)
+            return null;
+
+        int randomIndex = Random.Range(0, validCount);
+
+        foreach (SnakeSkinData skin in skins)
+        {
+            if (!skin.allowForAI)
+                continue;
+
+            if (randomIndex == 0)
+                return skin;
+
+            randomIndex--;
+        }
+
+        return null;
+    }
 }
