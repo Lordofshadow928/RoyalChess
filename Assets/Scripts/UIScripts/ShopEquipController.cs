@@ -8,7 +8,11 @@ public class ShopEquipController : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private Button equipButton;
-    [SerializeField] private TMP_Text buttonText;
+    [SerializeField] private Button unlockButton;
+    [SerializeField] private Image coinIcon;
+    [SerializeField] private TMP_Text equipText;
+    [SerializeField] private TMP_Text unlockText;
+    [SerializeField] private TMP_Text coinPriceText;
     [SerializeField] private SnakeUIPreview menuPreview;
     private void Start()
     {
@@ -18,28 +22,32 @@ public class ShopEquipController : MonoBehaviour
     public void Refresh()
     {
         SkinButton selected = selectionManager.CurrentSelection;
-
+        
         if (selected == null)
+        {
+            Debug.Log("CurrentSelection = NULL");
             return;
-
+        }
         SnakeSkinData skin = selected.SkinData;
 
         if (!PlayerSkinManager.Instance.IsUnlocked(skin.skinID))
         {
+            Debug.Log("STATE = LOCKED");
             equipButton.interactable = false;
-            buttonText.text = "Locked";
+            equipText.text = "Locked";
             return;
         }
 
         if (PlayerSkinManager.Instance.IsEquipped(skin.skinID))
         {
+            Debug.Log("STATE = EQUIPPED");
             equipButton.interactable = false;
-            buttonText.text = "EQUIPPED";
+            equipText.text = "EQUIPPED";
             return;
         }
-
+        Debug.Log("STATE = EQUIP");
         equipButton.interactable = true;
-        buttonText.text = "EQUIP";
+        equipText.text = "EQUIP";
     }
 
     public void EquipSelected()
