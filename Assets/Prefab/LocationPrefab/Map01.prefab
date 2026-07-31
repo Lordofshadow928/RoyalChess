@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 190411421261621766}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.29029313, z: 0, w: 0.9569378}
-  m_LocalPosition: {x: -1.31, y: 0.74, z: 10.96}
+  m_LocalPosition: {x: -2.45, y: 1.08, z: 10.19}
   m_LocalScale: {x: 0.5567962, y: 0.5567962, z: 0.5567962}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53,8 +53,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.7183, y: 1.7348598, z: 3.3197975}
-  m_Center: {x: 0.05036156, y: 4.215753, z: -0.053637058}
+  m_Size: {x: 3.7183, y: 1.5243636, z: 3.3197975}
+  m_Center: {x: 0.05036156, y: 4.32101, z: -0.053637058}
 --- !u!1 &207627692799690325
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 567653546966967116}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.29029313, z: 0, w: 0.9569378}
-  m_LocalPosition: {x: 6.88, y: 0.78, z: 4.73}
+  m_LocalPosition: {x: 6.23, y: 0.93, z: 5.7}
   m_LocalScale: {x: 0.624072, y: 0.624072, z: 0.624072}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -310,8 +310,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.0221434, y: 1.7819324, z: 3.5461962}
-  m_Center: {x: 0.108471185, y: 4.1921916, z: -0.12042302}
+  m_Size: {x: 3.8869278, y: 1.5450584, z: 3.426981}
+  m_Center: {x: 0.108471185, y: 4.2806945, z: -0.060815316}
 --- !u!1 &603268933039417779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,7 +2222,7 @@ Transform:
   m_GameObject: {fileID: 4297305657826636667}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.29029313, z: 0, w: 0.9569378}
-  m_LocalPosition: {x: 0.67, y: 0.2, z: 13.64}
+  m_LocalPosition: {x: 0.67, y: 0.53, z: 13.64}
   m_LocalScale: {x: 0.624072, y: 0.7464525, z: 0.624072}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2249,8 +2249,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.716067, y: 1.8000959, z: 3.3901346}
-  m_Center: {x: -0.057861988, y: 4.1830964, z: -0.22248247}
+  m_Size: {x: 3.2133734, y: 1.5565865, z: 2.9315314}
+  m_Center: {x: -0.009578577, y: 4.1831107, z: -0.2224823}
 --- !u!1 &4581935760524080088
 GameObject:
   m_ObjectHideFlags: 0
@@ -4674,7 +4674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6073675062643533855
 Transform:
   m_ObjectHideFlags: 0

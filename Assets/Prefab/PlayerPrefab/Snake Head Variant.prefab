@@ -77,6 +77,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198210635252314949, guid: e0af87f621a1c3549948d2be82b3f3b3,
         type: 3}
+      propertyPath: ShapeModule.arc.mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198210635252314949, guid: e0af87f621a1c3549948d2be82b3f3b3,
+        type: 3}
+      propertyPath: ShapeModule.arc.value
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 198210635252314949, guid: e0af87f621a1c3549948d2be82b3f3b3,
+        type: 3}
+      propertyPath: ShapeModule.arc.spread
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198210635252314949, guid: e0af87f621a1c3549948d2be82b3f3b3,
+        type: 3}
       propertyPath: InitialModule.gravitySource
       value: 0
       objectReference: {fileID: 0}
