@@ -8,7 +8,6 @@ public class SnakeFoodStorage : MonoBehaviour
     public void AddFood(int amount)
     {
         StoredFood += amount;
-        Debug.Log($"Current Run Food = {StoredFood}");
         OnFoodChanged?.Invoke();
     }
 

@@ -15,8 +15,7 @@ public class SnakeDeathHandler : MonoBehaviour
     private void HandleDeath(DeathData data)
     {
         GameObject foodPrefab = LevelManager.Instance.CurrentLevelData.foodPrefab;
-        Debug.Log($"Drop {data.foodCount} food");
-
+        
         // Spawn food here
         var segments = body.Segments;
 

@@ -40,7 +40,6 @@ public class FoodDemo : MonoBehaviour, IPoolable
     {
         Vector3 direction = target.position - rb.position;
         float distance = direction.magnitude;
-        Debug.Log("Distance: " + distance);
         //Eat when close enough
         if (distance <= eatDistance)
         {

@@ -131,8 +131,6 @@ public class FoodSpawner : MonoBehaviour
 
         Vector3 pos = center.position + new Vector3(Random.Range(-spawnArea.x, spawnArea.x), 0.5f, Random.Range(-spawnArea.z, spawnArea.z));
 
-        Debug.Log($"SpawnPoint: {center.name} | Center: {center.position} | SpawnPos: {pos}");
-
         return pos;
     }
 

@@ -24,6 +24,7 @@ public class SnakeBody : MonoBehaviour
     private SnakeSkinController skinController;
     private Transform tail;
     private bool isDead;
+    private SnakeHealth health;
     public IReadOnlyList<Transform> Segments => segments;
     public Transform Head => segments[0];
     public Transform Tail => tail;
@@ -32,6 +33,15 @@ public class SnakeBody : MonoBehaviour
     private void Awake()
     {
         skinController = GetComponentInChildren<SnakeSkinController>();
+       
+        health = GetComponent<SnakeHealth>();
+
+        SnakePart rootPart = GetComponent<SnakePart>();
+
+        if (rootPart != null)
+        {
+            rootPart.Owner = health;
+        }
     }
     private void Start()
     {
@@ -194,7 +204,7 @@ public class SnakeBody : MonoBehaviour
             return;
         if (part != null)
         {
-            part.Owner = GetComponent<SnakeHealth>();
+            part.Owner = health;
         }
         Transform last = tail != null ? segments[segments.Count - 2] : segments[segments.Count - 1];
         if (tail != null)
@@ -237,7 +247,7 @@ public class SnakeBody : MonoBehaviour
 
         if (part != null)
         {
-            part.Owner = GetComponent<SnakeHealth>();
+            part.Owner = health;
         }
         TailPoint = tail.Find("TailPoint");
         segments.Add(tail);

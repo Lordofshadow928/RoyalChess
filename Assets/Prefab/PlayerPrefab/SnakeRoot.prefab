@@ -3085,4 +3085,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2fe2eee9e38fa4e9d215a9b17662ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snakeHeadCollider: {fileID: 2443614519879232749}

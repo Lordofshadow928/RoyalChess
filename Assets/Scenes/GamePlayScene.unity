@@ -1618,6 +1618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelDatas:
   - {fileID: 11400000, guid: 48e40ff9429fd424cab5e8144f5aff4d, type: 2}
+  - {fileID: 11400000, guid: 0f8baf374bef48e40bbbb7f0c3691881, type: 2}
   stageDatas:
   - {fileID: 11400000, guid: 7079bf15c628b6744ad3f09ab51a99ab, type: 2}
   - {fileID: 11400000, guid: 9d3b254257e41a04b8dd963c9435fd1a, type: 2}

@@ -32,20 +32,17 @@ public class ShopEquipController : MonoBehaviour
 
         if (!PlayerSkinManager.Instance.IsUnlocked(skin.skinID))
         {
-            Debug.Log("STATE = LOCKED");
             equipButton.interactable = false;
-            equipText.text = "Locked";
+            equipText.text = "LOCKED";
             return;
         }
 
         if (PlayerSkinManager.Instance.IsEquipped(skin.skinID))
         {
-            Debug.Log("STATE = EQUIPPED");
             equipButton.interactable = false;
             equipText.text = "EQUIPPED";
             return;
         }
-        Debug.Log("STATE = EQUIP");
         equipButton.interactable = true;
         equipText.text = "EQUIP";
     }
