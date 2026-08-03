@@ -652,6 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3a99b84d5d528459bcc1deebe8c76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crown: {fileID: 8715879324926378342}
 --- !u!114 &8383807461826218673
 MonoBehaviour:
   m_ObjectHideFlags: 0

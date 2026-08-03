@@ -10,6 +10,7 @@ public class SnakeSpawner : MonoBehaviour
     [SerializeField] private DeathResultObserver deathObserver;
     [SerializeField] private ResultFoodUI resultFoodUI;
     [SerializeField] private SnakeProgressUI progressUI;
+    [SerializeField] private SnakeCrownManager crownManager;
     [SerializeField] private LayerMask spawnBlockingLayer;
     private Transform player;
     private LevelData level;
@@ -34,16 +35,23 @@ public class SnakeSpawner : MonoBehaviour
             SpawnAI();
             yield return new WaitForSeconds(level.aiSpawnInterval);
         }
+        crownManager.Initialize();
     }
 
     void SpawnPlayer()
     {
         player =Instantiate(level.playerPrefab, map.PlayerSpawnPoint.position, map.PlayerSpawnPoint.rotation).transform;
+        
         foodSpawner.Initialize(level, map, player);
+
         powerupSpawner.Initialize(level, map);
+
         cameraFollow.Initialize(player);
+
         deathObserver.Initialize(player.GetComponent<SnakeHealth>());
+
         resultFoodUI.Initialize(player.GetComponent<SnakeFoodStorage>());
+
         progressUI.Initialize(player.GetComponent<SnakeEnergy>());
     }
     Transform GetSafeBotSpawn()
@@ -57,10 +65,7 @@ public class SnakeSpawner : MonoBehaviour
 
         foreach (Transform spawn in spawns)
         {
-            bool occupied = Physics.CheckSphere(
-                spawn.position,
-                level.safeSpawnRadius,
-                spawnBlockingLayer);
+            bool occupied = Physics.CheckSphere(spawn.position, level.safeSpawnRadius, spawnBlockingLayer);
 
             if (!occupied)
                 validSpawns.Add(spawn);
@@ -83,15 +88,15 @@ public class SnakeSpawner : MonoBehaviour
             return;
         }
 
-        GameObject snake = Instantiate(
-            level.aiSnakePrefab,
-            spawn.position,
-            spawn.rotation);
+        GameObject snake = Instantiate(level.aiSnakePrefab, spawn.position, spawn.rotation);
+        SnakeCrown crown = snake.GetComponent<SnakeCrown>();
 
+        if (crown != null)
+            crownManager.RegisterSnake(crown);
         AISnakeRespawn respawn = snake.GetComponent<AISnakeRespawn>();
 
         if (respawn != null)
-            respawn.Initialize(this);
+            respawn.Initialize(this, crownManager);
     }
 
     public void RespawnAI()

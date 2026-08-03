@@ -4290,6 +4290,7 @@ MonoBehaviour:
   deathObserver: {fileID: 82293865}
   resultFoodUI: {fileID: 200272627}
   progressUI: {fileID: 98729997}
+  crownManager: {fileID: 1585428856}
   spawnBlockingLayer:
     serializedVersion: 2
     m_Bits: 2560

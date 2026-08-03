@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class AISnakeRespawn : MonoBehaviour
 {
+    [SerializeField] private SnakeCrown crown;
     private SnakeSpawner spawner;
-
-    public void Initialize(SnakeSpawner snakeSpawner)
+    private SnakeCrownManager crownManager;
+    
+    public void Initialize(SnakeSpawner snakeSpawner, SnakeCrownManager manager)
     {
         spawner = snakeSpawner;
-
+        crownManager = manager;
         GetComponent<SnakeHealth>()
             .OnDeath
             .AddListener(OnDeath);
@@ -18,6 +20,9 @@ public class AISnakeRespawn : MonoBehaviour
     void OnDeath(DeathData data)
     {
         spawner.RespawnAI();
+
+        if (crown != null)
+            crownManager.UnregisterSnake(crown);
 
         Destroy(gameObject);
     }
