@@ -63,7 +63,7 @@ public class MapData : MonoBehaviour
             else if (child.name.StartsWith("BotSpawn"))
                 bots.Add(child);
         }
-
+        
         botSpawnPoints = bots.ToArray();
     }
 

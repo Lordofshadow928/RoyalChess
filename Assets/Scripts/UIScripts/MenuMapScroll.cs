@@ -91,4 +91,11 @@ public class MenuMapScroll : MonoBehaviour
             }
         }
     }
+    public int CurrentStageIndex
+    {
+        get
+        {
+            return islands[currentLevel].StageData.stageIndex;
+        }
+    }
 }

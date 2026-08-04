@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class SelectedStage 
+public static class StageSelection 
 {
-    public static int StageIndex = 1;
+    public static int SelectedStage = 1;
 }

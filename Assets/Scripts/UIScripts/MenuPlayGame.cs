@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuPlayGame : MonoBehaviour
 {
+    [SerializeField] private MenuMapScroll mapScroll;
     public void PlayGame()
     {
+        StageSelection.SelectedStage = mapScroll.CurrentStageIndex;
         SceneManager.LoadScene("GamePlayScene");
     }
 }

@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        currentStageIndex = StageSelection.SelectedStage;
+        
     }
 
     private void Start()
@@ -41,7 +43,7 @@ public class LevelManager : MonoBehaviour
     void SpawnCurrentMap()
     {
         LevelData level = CurrentLevelData;
-
+   
         currentMap = Instantiate(level.mapPrefab, mapRoot);
 
         CurrentMapData = currentMap.GetComponentInChildren<MapData>();
