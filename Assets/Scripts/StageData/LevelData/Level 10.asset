@@ -12,7 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685838cce56a36543a1aafe6ec0fcb28, type: 3}
   m_Name: Level 10
   m_EditorClassIdentifier: 
-  foodPrefab: {fileID: 88406240596779923, guid: f66115a68bf3dc945a5935d3b4e7989f,
-    type: 3}
   mapPrefab: {fileID: 8398994666764680438, guid: cf225dd360f79874184b86ed89c751b8,
     type: 3}
+  foodPrefab: {fileID: 88406240596779923, guid: f66115a68bf3dc945a5935d3b4e7989f,
+    type: 3}
+  foodPerInterval: 10
+  maxActiveFood: 500
+  spawnInterval: 2
+  spawnArea: {x: 5, y: 1, z: 5}
+  minDistanceFromSnake: 3
+  maxSpawnAttempts: 3
+  playerPrefab: {fileID: 6551823763182382594, guid: ea7469c767c125d41b542f3238fc5e4e,
+    type: 3}
+  aiSnakePrefab: {fileID: 7216615919594575813, guid: 60f41f754e2320c4c83151c8d88adf50,
+    type: 3}
+  powerupPrefabs:
+  - {fileID: 1286789176227407, guid: 95e178d947997cf48b80759606e5cca4, type: 3}
+  firstSpawnDelay: 0.5
+  aiCount: 7
+  aiSpawnInterval: 0.5
+  aiRespawnDelay: 3
+  safeSpawnRadius: 3
+  powerupSpawnInterval: 15
+  maxPowerups: 3

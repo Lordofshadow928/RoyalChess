@@ -32,6 +32,6 @@ MonoBehaviour:
   aiCount: 7
   aiSpawnInterval: 0.5
   aiRespawnDelay: 3
-  safeSpawnRadius: 1
+  safeSpawnRadius: 3
   powerupSpawnInterval: 15
   maxPowerups: 3

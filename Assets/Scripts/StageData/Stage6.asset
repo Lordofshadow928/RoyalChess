@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Stage6
   m_EditorClassIdentifier: 
   stageIndex: 6
-  requiredFruit: 600
+  requiredFruit: 100
   fruitType: 3
   fruitSprite: {fileID: 21300000, guid: 074f1a331d303f04e940cd8511aba53a, type: 2}

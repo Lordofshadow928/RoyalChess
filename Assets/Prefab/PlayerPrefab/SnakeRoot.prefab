@@ -2726,7 +2726,7 @@ MonoBehaviour:
   segmentDistance: 0.5
   segmentLength: 1
   distanceBetweenPoints: 0.15
-  maxBodySegments: 25
+  maxBodySegments: 35
   visualRoot: {fileID: 6551823763182382594}
   preHistory: 15
   stopThreshold: 0.01
