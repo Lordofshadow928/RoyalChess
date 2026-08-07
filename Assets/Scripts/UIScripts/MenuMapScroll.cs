@@ -76,8 +76,7 @@ public class MenuMapScroll : MonoBehaviour
         pos.z = Mathf.Lerp(pos.z, targetZ, Time.deltaTime * smoothSpeed);
         transform.position = pos;
 
-        if (waitingToShowRequirement &&
-            Mathf.Abs(transform.position.z - targetZ) < 0.05f)
+        if (waitingToShowRequirement && Mathf.Abs(transform.position.z - targetZ) < 0.05f)
         {
             waitingToShowRequirement = false;
 
@@ -96,6 +95,13 @@ public class MenuMapScroll : MonoBehaviour
         get
         {
             return islands[currentLevel].StageData.stageIndex;
+        }
+    }
+    public bool CurrentIslandLocked
+    {
+        get
+        {
+            return islands[currentLevel].IsLocked;
         }
     }
 }

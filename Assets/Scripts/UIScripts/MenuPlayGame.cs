@@ -8,6 +8,9 @@ public class MenuPlayGame : MonoBehaviour
     [SerializeField] private MenuMapScroll mapScroll;
     public void PlayGame()
     {
+        if (mapScroll.CurrentIslandLocked)
+            return;
+        
         StageSelection.SelectedStage = mapScroll.CurrentStageIndex;
         SceneManager.LoadScene("GamePlayScene");
     }
