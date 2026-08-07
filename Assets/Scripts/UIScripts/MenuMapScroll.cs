@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class MenuMapScroll : MonoBehaviour
 {
     [SerializeField] private MenuProgressManager progressManager;
@@ -22,12 +22,32 @@ public class MenuMapScroll : MonoBehaviour
     private float targetZ;
     private bool waitingToShowRequirement;
 
-    private void Start()
+    private IEnumerator Start()
     {
-        targetZ = transform.position.z;
+        yield return null;
+
+        currentLevel = Mathf.Clamp(
+            StageSelection.SelectedStage - 1,
+            0,
+            progressManager.MaxReachableIndex);
+
+        previousLevel = currentLevel;
+
+        targetZ = currentLevel * stepSize + snapOffset;
+
+        Vector3 pos = transform.position;
+        pos.z = targetZ;
+        transform.position = pos;
+
+        snakeTeleportEffect.SetPosition(islands[currentLevel]);
 
         if (requirementUI != null)
-            requirementUI.Hide();
+        {
+            if (islands[currentLevel].IsLocked)
+                requirementUI.Show(islands[currentLevel]);
+            else
+                requirementUI.Hide();
+        }
     }
 
     private void Update()

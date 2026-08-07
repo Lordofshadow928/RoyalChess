@@ -81,7 +81,6 @@ public class SnakeSpawner : MonoBehaviour
     public void SpawnAI()
     {
         Transform spawn = GetSafeBotSpawn();
-        Debug.Log(spawn == null ? "No safe spawn!" : spawn.name);
         if (spawn == null)
         {
             StartCoroutine(RespawnRoutine());

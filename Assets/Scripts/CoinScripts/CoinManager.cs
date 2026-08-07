@@ -71,8 +71,6 @@ public class CoinManager : MonoBehaviour
         PlayerPrefs.SetInt(PendingCoinsKey, amount);
         PlayerPrefs.SetInt(PendingStageKey, stageIndex);
         PlayerPrefs.Save();
-
-        Debug.Log($"Saved pending reward {amount} coins for stage {stageIndex}");
     }
 
     public void CommitCoins(int amount)
@@ -84,7 +82,6 @@ public class CoinManager : MonoBehaviour
         PlayerPrefs.SetInt(CoinsKey, total);
         PlayerPrefs.Save();
         OnCoinsChanged?.Invoke(total);
-        Debug.Log($"Committed {amount} coins. Total = {total}");
     }
 
     public bool SpendCoins(int amount)
@@ -97,7 +94,6 @@ public class CoinManager : MonoBehaviour
         PlayerPrefs.SetInt(CoinsKey, total);
         PlayerPrefs.Save();
         OnCoinsChanged?.Invoke(total);
-        Debug.Log($"Spent {amount} coins. Total = {total}");
         return true;
     }
 
@@ -112,10 +108,7 @@ public class CoinManager : MonoBehaviour
 
     public CoinReward GetPendingReward()
     {
-        return new CoinReward(
-            PlayerPrefs.GetInt(PendingCoinsKey, 0),
-            PlayerPrefs.GetInt(PendingStageKey, 0)
-        );
+        return new CoinReward(PlayerPrefs.GetInt(PendingCoinsKey, 0), PlayerPrefs.GetInt(PendingStageKey, 0));
     }
 
     public void ClearPendingReward()
@@ -129,10 +122,10 @@ public class CoinManager : MonoBehaviour
 
     #region Debug
 
-    [ContextMenu("Add 100 Coins")]
+    [ContextMenu("Add 100000 Coins")]
     private void DebugAddCoins()
     {
-        SetPendingReward(100, 1);
+        SetPendingReward(100000, 1);
     }
 
     [ContextMenu("Clear Coins")]

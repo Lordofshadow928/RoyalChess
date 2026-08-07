@@ -52,4 +52,12 @@ public class SnakeUITeleport : MonoBehaviour
                 r.enabled = visible;
         }
     }
+    public void SetPosition(MenuIsland island)
+    {
+        if (island == null)
+            return;
+
+        transform.position = island.PositionForSnake.position;
+        SetVisible(true);
+    }
 }

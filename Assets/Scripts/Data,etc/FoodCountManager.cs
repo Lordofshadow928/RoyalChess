@@ -27,16 +27,18 @@ public class FoodCountManager : MonoBehaviour
     }
 
     #region Best Progress
-
+    private string GetProgressKey()
+    {
+        return $"LevelBest_{StageSelection.SelectedStage}";
+    }
     public int GetBestProgress()
     {
-        string key = $"LevelBest_{SceneManager.GetActiveScene().buildIndex}";
-        return PlayerPrefs.GetInt(key, 0);
+        return PlayerPrefs.GetInt(GetProgressKey(), 0);
     }
 
     public bool SaveBestProgress(int percent)
     {
-        string key = $"LevelBest_{SceneManager.GetActiveScene().buildIndex}";
+        string key = GetProgressKey();
         int best = PlayerPrefs.GetInt(key, 0);
 
         if (percent > best)
