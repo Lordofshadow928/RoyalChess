@@ -5,14 +5,14 @@ public class RainBowPowerUp : MonoBehaviour
 {
     [SerializeField] private float duration = 10f;
 
-    private SnakeInvincible2 invincible;
+    private SnakeInvincible invincible;
     private SnakeBoost boost;
 
     private Coroutine routine;
 
     private void Awake()
     {
-        invincible = GetComponentInChildren<SnakeInvincible2>();
+        invincible = GetComponentInChildren<SnakeInvincible>();
         boost = GetComponent<SnakeBoost>();
     }
 

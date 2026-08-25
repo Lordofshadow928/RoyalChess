@@ -17,16 +17,27 @@ public class FoodManager : MonoBehaviour
 
     public void RegisterFood(Transform food)
     {
+        if (food == null)
+            return;
+
         if (!foods.Contains(food))
             foods.Add(food);
     }
 
     public void UnregisterFood(Transform food)
     {
+        if (food == null)
+            return;
+
         foods.Remove(food);
     }
 
     public Transform GetNearestFood(Vector3 position)
+    {
+        return GetNearestFood(position, null);
+    }
+
+    public Transform GetNearestFood(Vector3 position, Transform excludedFood)
     {
         Transform nearest = null;
         float shortestDistance = Mathf.Infinity;
@@ -34,6 +45,9 @@ public class FoodManager : MonoBehaviour
         foreach (Transform food in foods)
         {
             if (food == null)
+                continue;
+
+            if (food == excludedFood)
                 continue;
 
             float distance = (food.position - position).sqrMagnitude;

@@ -5,11 +5,11 @@ using UnityEngine;
 public class SnakeCollisionDeath : MonoBehaviour
 {
     [SerializeField] private SnakeHealth health;
-    private SnakeInvincible2 invincible;
+    private SnakeInvincible invincible;
 
     private void Awake()
     {
-        invincible = GetComponentInChildren<SnakeInvincible2>();
+        invincible = GetComponentInChildren<SnakeInvincible>();
     }
     private void OnTriggerEnter(Collider other)
     {

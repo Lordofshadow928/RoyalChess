@@ -10,11 +10,20 @@ public class AISnakeBrain : MonoBehaviour
     [Header("Targeting")]
     [SerializeField] private float targetRefreshRate = 0.75f;
 
+    [Header("Target Stuck Detection")]
+    [SerializeField] private float stuckDistance = 2f;
+    [SerializeField] private float stuckTime = 1f;
+    [SerializeField] private float rejectedFoodCooldown = 2f;
+
     private SnakeMovement movement;
     private AISnakeObstacleSensor sensor;
 
     private Transform currentTarget;
+    private Transform rejectedTarget;
+
     private float targetTimer;
+    private float stuckTimer;
+    private float rejectedTargetTimer;
 
     private void Awake()
     {
@@ -27,13 +36,9 @@ public class AISnakeBrain : MonoBehaviour
         if (FoodManager.Instance == null)
             return;
 
-        targetTimer += Time.fixedDeltaTime;
+        UpdateRejectedTargetCooldown();
 
-        if (currentTarget == null || targetTimer >= targetRefreshRate)
-        {
-            targetTimer = 0f;
-            currentTarget = FoodManager.Instance.GetNearestFood(transform.position);
-        }
+        UpdateTarget();
 
         if (currentTarget == null)
         {
@@ -41,11 +46,82 @@ public class AISnakeBrain : MonoBehaviour
             return;
         }
 
+        CheckIfStuck();
+
+        if (currentTarget == null)
+        {
+            movement.SteeringInput = 0f;
+            return;
+        }
+
+        SteerTowardsTarget();
+    }
+
+    private void UpdateRejectedTargetCooldown()
+    {
+        if (rejectedTarget == null)
+            return;
+
+        rejectedTargetTimer += Time.fixedDeltaTime;
+
+        if (rejectedTargetTimer >= rejectedFoodCooldown)
+        {
+            rejectedTarget = null;
+            rejectedTargetTimer = 0f;
+        }
+    }
+
+    private void UpdateTarget()
+    {
+        targetTimer += Time.fixedDeltaTime;
+
+        if (currentTarget == null || targetTimer >= targetRefreshRate)
+        {
+            targetTimer = 0f;
+
+            currentTarget = FoodManager.Instance.GetNearestFood(transform.position, rejectedTarget);
+
+            stuckTimer = 0f;
+        }
+    }
+
+    private void CheckIfStuck()
+    {
+        float distanceToTarget = Vector3.Distance(transform.position, currentTarget.position);
+
+        if (distanceToTarget <= stuckDistance)
+        {
+            stuckTimer += Time.fixedDeltaTime;
+
+            if (stuckTimer >= stuckTime)
+            {
+                RejectCurrentTarget();
+            }
+        }
+        else
+        {
+            stuckTimer = 0f;
+        }
+    }
+
+    private void RejectCurrentTarget()
+    {
+        rejectedTarget = currentTarget;
+        rejectedTargetTimer = 0f;
+
+        currentTarget = FoodManager.Instance.GetNearestFood(transform.position, rejectedTarget);
+
+        targetTimer = 0f;
+        stuckTimer = 0f;
+    }
+
+    private void SteerTowardsTarget()
+    {
         Vector3 foodDirection = (currentTarget.position - transform.position).normalized;
 
         Vector3 finalDirection = foodDirection;
 
-        if (sensor.AvoidanceDirection.sqrMagnitude > 0.1f)
+        if (sensor != null && sensor.AvoidanceDirection.sqrMagnitude > 0.1f)
         {
             finalDirection += sensor.AvoidanceDirection;
         }
@@ -63,7 +139,7 @@ public class AISnakeBrain : MonoBehaviour
 
         if (Mathf.Abs(angle) > steeringDeadZone)
         {
-            targetSteering = Mathf.Clamp(angle / steeringSensitivity, -1f, 1f);
+            targetSteering = Mathf.Clamp( angle / steeringSensitivity, -1f, 1f);
         }
 
         movement.SteeringInput = Mathf.Lerp(movement.SteeringInput, targetSteering, steeringSmoothness * Time.fixedDeltaTime);

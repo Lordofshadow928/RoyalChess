@@ -4,7 +4,7 @@ public class SnakeBoostInput : MonoBehaviour
 {
     [SerializeField] private SnakeBoost boost;
     [SerializeField] private SnakeEnergy energy;
-    [SerializeField] private SnakeInvincible2 invincible;
+    [SerializeField] private SnakeInvincible invincible;
 
     private void Update()
     {

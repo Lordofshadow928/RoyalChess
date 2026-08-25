@@ -133,10 +133,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3741600f013314b904355b7a509593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steeringSensitivity: 120
-  steeringSmoothness: 2
+  steeringSensitivity: 90
+  steeringSmoothness: 4
   steeringDeadZone: 12
   targetRefreshRate: 0.75
+  stuckDistance: 1.5
+  stuckTime: 1
+  rejectedFoodCooldown: 2
 --- !u!1 &4686460544526818871
 GameObject:
   m_ObjectHideFlags: 0

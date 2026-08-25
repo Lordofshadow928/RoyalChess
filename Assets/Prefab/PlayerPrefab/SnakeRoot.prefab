@@ -2449,7 +2449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boost: {fileID: 2352508175228313679}
   energy: {fileID: 553610566051941527}
-  invincible: {fileID: 3607005102260194980}
+  invincible: {fileID: 5522629940952392412}
 --- !u!1 &5533297134471764075
 GameObject:
   m_ObjectHideFlags: 0
@@ -3050,7 +3050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 471209239300362034}
-  - component: {fileID: 3607005102260194980}
+  - component: {fileID: 5522629940952392412}
   m_Layer: 9
   m_Name: SnakeStates
   m_TagString: Untagged
@@ -3073,7 +3073,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5498972219986183345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3607005102260194980
+--- !u!114 &5522629940952392412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3082,6 +3082,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9085719878780341964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f2fe2eee9e38fa4e9d215a9b17662ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 87e1e66d61f48e94ea195d43e5018bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -1,5 +1,5 @@
 using UnityEngine;
-public class SnakeInvincible2 : MonoBehaviour
+public class SnakeInvincible : MonoBehaviour
 {
     //[SerializeField] private Collider snakeHeadCollider;
 
@@ -7,8 +7,6 @@ public class SnakeInvincible2 : MonoBehaviour
 
     public void EnableInvincible()
     {
-        Debug.Log("ENABLE INVINCIBLE");
-
         IsInvincible = true;
 
         //if (snakeHeadCollider != null)
@@ -20,8 +18,6 @@ public class SnakeInvincible2 : MonoBehaviour
 
     public void DisableInvincible()
     {
-        Debug.Log("DISABLE INVINCIBLE");
-
         IsInvincible = false;
 
         //if (snakeHeadCollider != null)

@@ -79,6 +79,7 @@ public class CoinManager : MonoBehaviour
             return;
 
         int total = Coins + amount;
+
         PlayerPrefs.SetInt(CoinsKey, total);
         PlayerPrefs.Save();
         OnCoinsChanged?.Invoke(total);
@@ -86,6 +87,9 @@ public class CoinManager : MonoBehaviour
 
     public bool SpendCoins(int amount)
     {
+        if (amount <= 0)
+            return false;
+
         if (!CanAfford(amount))
             return false;
 
@@ -122,10 +126,10 @@ public class CoinManager : MonoBehaviour
 
     #region Debug
 
-    [ContextMenu("Add 100000 Coins")]
+    [ContextMenu("Add 1000 Coins")]
     private void DebugAddCoins()
     {
-        SetPendingReward(100000, 1);
+        SetPendingReward(1000, 1);
     }
 
     [ContextMenu("Clear Coins")]
