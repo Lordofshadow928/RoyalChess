@@ -1,10 +1,6 @@
 using Lean.Pool;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEditor.PlayerSettings;
-
 public class FoodSpawner : MonoBehaviour
 {
     [Header("Obstacle Check")]
